@@ -31,14 +31,14 @@ p{
 }
 
 .contenido-header .fondo{
-    width: 50%;
+    width: 0%;
     height: 100%;
     max-width: 100%;
     background-image: url(../img/bg-top.png);
 }
 .contenido-header .texto{
     /*el vw es view por width y el vh es view por height*/
-    width: calc(100vw);
+    width: calc(100vw - 20px);
     height: 100vh;
     font-size: 90px;
     font-weight: 400;
@@ -51,4 +51,227 @@ p{
     /*hace que el texto se ve como trasnparente*/
     mix-blend-mode: multiply;
 
+}
+
+/*trabajar con el nav var o el Menu*/
+.menu{
+    background-color: var(--purple-medium);
+    /*siempre ocupara todo el ancho de la pagina*/
+    width: 100%;
+    /*se quedara estatico en donde esta*/
+    position: sticky;
+    /*hara que cuando hagas scroll se quede en la parte de arriba*/ 
+    top: 0;
+    padding: 5px;
+    z-index: 999;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Serif', serif;
+    font-style: italic;
+    margin-bottom: 60px;
+    
+}
+.menu a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 26px;
+    background-color: var(--purple-medium);
+    margin: o 10px;
+    transition: .5s ease all;
+    color: var(--gray-light);
+    
+}
+.menu a:hover{
+    /*cuando este por encima de el botton se trslada en eje Y(abajo)*/
+    transform: translateY(18px);
+    background-color: var(--purple-light);
+}
+
+/*nosotros parte de abajo de la pagina */
+.nosotros{
+    margin-bottom: 60px;
+}
+.subtitulo {
+    font-size: 20px;
+    color: var(--Purple-dark);
+    font-family: 'Noto Serift', serif;
+    font-weight: 700;
+    z-index: 2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.subtitulo span {
+    background-color: var(--gray-light);
+    padding: 0 15px;
+    z-index: 99;
+    position: relative;
+}
+.subtitulo::after{
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background: var(--Purple-dark);
+    position: relative;
+    top: -29px;
+    z-index: 1;
+}
+.nosotros .titulo{
+    width: 70%;
+    font-size: 44px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+.nosotros .enlace{
+    display: inline-block;
+    margin-top: 40px;
+    color: var(--purple-light);
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    transition: .3s ease all;
+    text-decoration: none;
+}
+.nosotros .enlace:hover{
+    /*hacer que tenga efecto el boton de enlace y se exparsa*/
+    text-decoration: none;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--purple-light);
+}
+
+/*Productor*/
+.productos{
+    background: var(--gray-light);
+    padding: 20px;
+    margin-bottom: 60px;
+}
+.productos .titulo{
+    width: 70%;
+    font-size: 44px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+.productos .producto{
+    position: relative;
+    width: 100%;
+}
+.productos .overlay{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--purple-light);
+    overflow: hidden;
+    transition: .5s ease;
+}
+.productos .producto:hover .overlay{
+    width: 100%;
+    opacity: .8;
+}
+.productos .producto .overlay-text  {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    white-space: nowrap;
+    color: var(--white);
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-top: 1px solid #ffff;
+    border-bottom: 1px solid #ffff;
+}
+.productos .btn-productos{
+    background-color: var(--purple-light);
+    color: #fff;
+    padding: 7px 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: .3s ease;
+    
+}
+.productos .btn-productos:hover{
+    background-color: transparent;
+    border: 2px solid var(--purple-light);
+    color: var(--purple-light);
+}
+
+/*separador de abajo*/
+.separador{
+    width: 100%;
+    height: 250px;
+    background-image: url(../img/bg-separator.jpeg);
+    background-position: center;
+    background-size: cover;
+    /*imagen fija*/
+    background-attachment: fixed;
+    margin-bottom: 60px;
+} 
+.separador p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Noto Serif', serif;
+    padding: 10px;
+}
+
+/*acerca de*/
+.acerca-de{
+    margin-bottom: 60px;
+}
+
+/*galeria*/
+.galeria{
+    margin-bottom: 60px;
+}
+.galeria img{
+    height: 100%;
+    width: 100%;
+    /*si abarca mas el tamaño que se ajuste a lo que puede*/
+    object-fit: cover;
+}
+
+.contacto{
+    margin-bottom: 60px;
+}
+
+/*redes sociales*/
+.redes-sociales{
+    padding: 10px;
+    background-color: var(--purple-light);
+}
+.redes-sociales img{
+    padding: 5px;
+    border-radius: 100%;
+    width: 50px;
+    transition: .3s ease all;
+}
+.redes-sociales img:hover{
+    /*esto es para que haga la imagen 1.2 veces mas su tamaño*/
+    transform: scale(1.2);
+}
+
+/*media query*/
+@media screen and (max-width: 992px){
+    p{
+        font-size: 18px;
+    }
+    .contenido-header .texto{
+        font-size: 60px;
+    }
+    .menu a{
+        font-size: 20px;
+    }
+    .nosotros .titulo,
+    .producto .titulo{
+        font-size: 30px;
+    }
 }
